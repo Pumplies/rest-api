@@ -4,6 +4,10 @@ const cors = require("cors");
 const mongoose = require('mongoose')
 const router = require('./routes/card-router')
 
+require('dotenv').config()
+
+const port = process.env.PORT || 4000
+
 const db = 'mongodb+srv://Pumplies:Maximka20051120@cluster0.dfi8dij.mongodb.net/restapi?retryWrites=true&w=majority&appName=Cluster0'
 
 mongoose
@@ -68,6 +72,6 @@ app.put("/api/items/:index", (req, res) => {
   // }
 });
 //Запуск сервера
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log(`Server hosting on 4000 PORT`);
 });
